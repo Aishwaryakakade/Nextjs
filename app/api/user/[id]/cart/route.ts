@@ -1,14 +1,5 @@
-import { products } from "@/app/product-data";
 import { NextRequest } from "next/server";
 import { connectToDb } from "@/app/api/db";
-
-type ShoppingCart = Record<string, string[]>;
-
-const carts: ShoppingCart = {
-  "1": ["123", "234"],
-  "2": ["345", "456"],
-  "3": ["234"],
-};
 
 type Params = {
   id: string;
@@ -45,7 +36,7 @@ export async function GET(
 }
 
 // Adding to cart
-type CartBody = { productId: any };
+type CartBody = { productId: number };
 
 export async function POST(
   request: NextRequest,

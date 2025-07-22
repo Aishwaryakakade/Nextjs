@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { connectToDb } from "../../db";
 
 type Params = {
-  id: any;
+  id: number;
 };
 
 export async function GET(

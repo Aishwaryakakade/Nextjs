@@ -1,5 +1,4 @@
 import NotFoundPage from "@/app/not-found";
-import { products } from "@/app/product-data";
 
 export default async function ProductsDetailsPage({
   params,
