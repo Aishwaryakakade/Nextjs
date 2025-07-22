@@ -51,11 +51,11 @@ export async function POST(
   console.log(productId);
   const updatedCart = await db
     .collection("carts")
-    .findOneAndUpdate(
-      { userId },
-      { $push: { cartIds: productId } },
-      { upsert: true, returnDocument: "after" }
-    );
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .findOneAndUpdate({ userId }, { $push: { cartIds: productId } } as any, {
+      upsert: true,
+      returnDocument: "after",
+    });
 
   const cartProducts = await db
     .collection("products")

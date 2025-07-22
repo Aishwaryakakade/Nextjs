@@ -1,4 +1,5 @@
 import NotFoundPage from "@/app/not-found";
+import Image from "next/image";
 
 export default async function ProductsDetailsPage({
   params,
@@ -17,7 +18,7 @@ export default async function ProductsDetailsPage({
   return (
     <div className="container mx-auto p-8 flex flex-col md:flex-row">
       <div className="md: w-1/2 mb-4 md:mb-0 md:mr-8">
-        <img
+        <Image
           src={"/" + product.imageUrl}
           alt="Product Image"
           className="w-full h-auto rounded-lg shadow-md"
